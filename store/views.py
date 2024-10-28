@@ -13,7 +13,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from django_filters.rest_framework import FilterSet
 from rest_framework.filters import OrderingFilter,SearchFilter
 from .mypaginations import MyLimitOffsetPagination
-from django.contrib.auth.models import User
+
 
 
 class ProductFilter(FilterSet):
