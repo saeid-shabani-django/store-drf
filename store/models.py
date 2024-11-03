@@ -47,6 +47,24 @@ class Customer(models.Model):
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
 
+    class Meta:
+
+        permissions = [
+        ('send_private_email','can send private email')
+        ]
+
+    @property
+    def first_name(self):
+        return f'{self.user.first_name}'
+
+    @property
+    def last_name(self):
+        return f'{self.user.last_name}'
+
+    @property
+    def email(self):
+        return f'{self.user.email}'
+
 
 class Address(models.Model):
     customer = models.OneToOneField(Customer, on_delete=models.CASCADE, primary_key=True)
